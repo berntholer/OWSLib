@@ -471,7 +471,7 @@ def http_prepare(*args, **kwargs):
     else:
         rkwargs.setdefault('auth', None)
     rkwargs.setdefault('cert', rkwargs.get('cert'))
-    rkwargs.setdefault('verify', rkwargs.get('verify', True))
+    rkwargs.setdefault('verify', auth.verify and rkwargs.get('verify', True))
 
     return rkwargs
 
